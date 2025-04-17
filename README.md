@@ -1,6 +1,8 @@
-# Camp Sense
 
-Camp Sense connects to WattIsIt via bluetooth and displays the energy and weather data. The `App` folder contains
+
+# Camp Sense 
+
+<img src="App/assets/adaptive-icon.png" width="50"> The Camp Sense app connects to WattIsIt via bluetooth and displays the energy and weather data. The `App` folder contains
 the React Native app developed using Expo.
 
 |                     Energy                     |                    Weather                    |
