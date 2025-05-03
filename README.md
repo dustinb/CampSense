@@ -2,7 +2,7 @@
 
 # Camp Sense 
 
-<img src="App/assets/adaptive-icon.png" width="50"> The Camp Sense app connects to the WattIsIt ESP32 hardware module via bluetooth and displays the battery energy and weather data. 
+<img src="App/assets/adaptive-icon.png" width="50"> The Camp Sense app connects to the WattIsIt ESP32 hardware module via bluetooth and displays the battery energy usage and weather data. 
 
 The app shows current amps into (charging) or out (discharging).   A total count shows how many watt hours went into and out of the battery. Long press the battery on screen to reset the Wh counters.
 
@@ -49,12 +49,3 @@ AHT21 is optional, was used for humidity but also has a temperature sensor.
 L Low side of shunt \
 H High side of shunt
 
-## Remote XY
-
-Before the Camp Sense app Remote XY was used for development. The sketch is in `Arduino/RemoteXY`.
-
-The Remote XY is a free app is used to view data with bluetooh. This also has a setting for the shunt 50, 75, or 100 mV. The setting is persisted in eeprom (flash memory)
-
-https://remotexy.com/en/editor/391325040dffc13fc4e74f019a2b24ee/
-
-<img src="images/remotexy.png" width="300">
