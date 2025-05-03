@@ -2,7 +2,14 @@
 
 # Camp Sense 
 
-<img src="App/assets/adaptive-icon.png" width="50"> The Camp Sense app connects to WattIsIt via bluetooth and displays the energy and weather data. The `App` folder contains
+<img src="App/assets/adaptive-icon.png" width="50"> The Camp Sense app connects to the WattIsIt ESP32 hardware module via bluetooth and displays the battery energy and weather data. 
+
+The app shows current amps into (charging) or out (discharging).   A total count shows how many watt hours went into and out of the battery. Long press the battery on screen to reset the Wh counters.
+
+Your shunt will have a voltage drop rating of 50mmV, 75mV or 100mV.  Long press the setting to set this for your shunt resistor.
+
+Access the weather screen by swiping left (and right on weather to return).
+The `App` folder contains
 the React Native app developed using Expo.
 
 |                     Energy                     |                    Weather                    |
