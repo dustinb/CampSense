@@ -54,28 +54,30 @@ export default {
     ios: {
       supportsTablet: true,
       bundleIdentifier: getUniqueIdentifier(),
+      buildNumber: "1.0.0",
       infoPlist: {
         NSBluetoothAlwaysUsageDescription:
           "Camp Senses uses Bluetooth to connect to devices.",
         NSBluetoothPeripheralUsageDescription:
           "Camp Sense needs access to your Bluetooth.",
-      },
-    },
-    android: {
-      adaptiveIcon: {
-        foregroundImage: "./assets/adaptive-icon.png",
-        backgroundColor: "#ffffff",
-      },
-      package: getUniqueIdentifier(),
-    },
-    web: {
-      favicon: "./assets/favicon.png",
-    },
-    extra: {
-      eas: {
-        projectId: "b36ab266-2a21-4099-9502-a3a48f6e3816",
-      },
-    },
-    owner: "oldbute",
+        ITSAppUsesNonExemptEncryption: false
+      }
+    }
   },
-};
+  android: {
+    adaptiveIcon: {
+      foregroundImage: "./assets/adaptive-icon.png",
+      backgroundColor: "#ffffff",
+    },
+    package: getUniqueIdentifier(),
+  },
+  web: {
+    favicon: "./assets/favicon.png",
+  },
+  extra: {
+    eas: {
+      projectId: "b36ab266-2a21-4099-9502-a3a48f6e3816",
+    },
+  },
+  owner: "oldbute",
+}
