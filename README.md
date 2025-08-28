@@ -18,7 +18,7 @@ the React Native app developed using Expo.
 
 # WattIsIT
 
-A battery watt meter using ADS1115 and a shunt to measure power usage. There are 2 Arduino sketches, `Arduino/RemoteXY` and `Arduino/Camp Sense`. The latter uses Platform IO plugin for VSCode and works with the Camp Sense app.
+A battery watt meter using ADS1115 and a shunt to measure power usage. The Arduino sketch `Arduino/WattIsIt`. Been using the DOIT ESP32 DEVKIT V1 board.
 
 ## BOM
 

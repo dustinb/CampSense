@@ -23,7 +23,7 @@ BLECharacteristic *pMvDataChar;
 Adafruit_BMP085 bmp;
 #endif
 
-#define ADC
+// #define ADC
 #ifdef ADC
 #include "ADS1X15.h"
 ADS1115 ADS(0x48);
@@ -71,9 +71,11 @@ class mvCallback : public BLECharacteristicCallbacks
 {
   void onWrite(BLECharacteristic *pCharacteristic)
   {
-    std::string value = pCharacteristic->getValue();
-    uint16_t newMV = (value[1] << 8) | value[0];
-    uint16_t reset = (value[3] << 8) | value[2];
+    // std::string value = pCharacteristic->getValue();
+    uint8_t* data = pCharacteristic->getData();
+    size_t len = pCharacteristic->getLength();
+    uint16_t newMV = (data[1] << 8) | data[0];
+    uint16_t reset = (data[3] << 8) | data[2];
     if (newMV != mVSetting)
     {
       Serial.print("Setting mV to: ");
@@ -207,20 +209,17 @@ void loop()
 #endif
 
 #ifdef AHT2x
-  if (aht20.available() == true)
-  {
-    // Get the new temperature and humidity value
-    temp += aht20.getTemperature();
-    tempCount++;
-    weather.humidity = aht20.getHumidity();
+  // Get the new temperature and humidity value
+  temp += aht20.getTemperature();
+  tempCount++;
+  weather.humidity = aht20.getHumidity();
 
-    Serial.print("Humidity: ");
-    Serial.println(weather.humidity);
+  Serial.print("Humidity: ");
+  Serial.println(weather.humidity);
 
-    // The AHT20 can respond with a reading every ~50ms. However, increased read time can cause the IC to heat around 1.0C above ambient.
-    // The datasheet recommends reading every 2 seconds.
-    delay(200);
-  }
+  // The AHT20 can respond with a reading every ~50ms. However, increased read time can cause the IC to heat around 1.0C above ambient.
+  // The datasheet recommends reading every 2 seconds.
+  delay(200);
 #endif
 
 #ifdef ADC
@@ -294,12 +293,12 @@ void loop()
   uint8_t weatherDataBytes[sizeof(WeatherData)];
   memcpy(weatherDataBytes, &weather, sizeof(WeatherData));
   pWeatherDataChar->setValue(weatherDataBytes, sizeof(WeatherData));
-  pWeatherDataChar->notify();
+  pWeatherDataChar->notify(true);
 
   uint8_t energyDataBytes[sizeof(EnergyData)];
   memcpy(energyDataBytes, &energyData, sizeof(EnergyData));
   pEnergyDataChar->setValue(energyDataBytes, sizeof(EnergyData));
-  pEnergyDataChar->notify();
+  pEnergyDataChar->notify(true);
 
   delay(1500);
 }

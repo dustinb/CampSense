@@ -15,3 +15,4 @@ Open `ios/CampSense.xcworkspace` in Xcode.  Edit the scheme and change the Build
  Select a team under Signing & Capabilities, click play to build the project to your iPhone.
 
 ![Prebuild Screenshot](doc/prebuild.png)
+
