@@ -1,7 +1,4 @@
 
-
-# Camp Sense 
-
 <img src="App/assets/adaptive-icon.png" width="50"> The Camp Sense app connects to the WattIsIt ESP32 hardware module via bluetooth and displays the battery energy usage and weather data. 
 
 The app shows current amps into (charging) or out (discharging).   A total count shows how many watt hours went into and out of the battery. Long press the battery on screen to reset the Wh counters.
