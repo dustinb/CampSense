@@ -3,14 +3,14 @@ const IS_PREVIEW = process.env.APP_VARIANT === "preview";
 
 const getUniqueIdentifier = () => {
   if (IS_DEV) {
-    return "com.roundporch.wattisit.dev";
+    return "com.oldbute.wattisit.dev";
   }
 
   if (IS_PREVIEW) {
-    return "com.roundporch.wattisit.preview";
+    return "com.oldbute.wattisit.preview";
   }
 
-  return "com.roundporch.wattisit";
+  return "com.oldbute.wattisit";
 };
 
 const getAppName = () => {
@@ -29,7 +29,8 @@ export default {
   expo: {
     name: getAppName(),
     slug: "WattIsIt",
-    version: "1.0.0",
+    version: "1.0.1",
+    buildNumber: "2",
     orientation: "portrait",
     icon: "./assets/icon.png",
     userInterfaceStyle: "light",
@@ -54,11 +55,13 @@ export default {
     ios: {
       supportsTablet: true,
       bundleIdentifier: getUniqueIdentifier(),
+      buildNumber: "2",
       infoPlist: {
         NSBluetoothAlwaysUsageDescription:
-          "Camp Senses uses Bluetooth to connect to devices.",
+          "Camp Sense uses Bluetooth to connect to devices.",
         NSBluetoothPeripheralUsageDescription:
           "Camp Sense needs access to your Bluetooth.",
+        "ITSAppUsesNonExemptEncryption": false,
       },
     },
     android: {

@@ -23,7 +23,7 @@ BLECharacteristic *pMvDataChar;
 Adafruit_BMP085 bmp;
 #endif
 
-// #define ADC
+#define ADC
 #ifdef ADC
 #include "ADS1X15.h"
 ADS1115 ADS(0x48);

@@ -16,7 +16,27 @@ the React Native app developed using Expo.
 | :--------------------------------------------: | :-------------------------------------------: |
 | <img src="images/campsense1.jpeg" width="300"> | <img src="images/campsense2.png" width="300"> |
 
-# WattIsIT
+## Privacy Policy
+
+This app is a basic energy monitor with optional astronomy features.
+
+Location Data:
+The app may request access to your location in order to retrieve sunrise, sunset, and other astronomy information. Location access is optional, and the app continues to function without it.
+
+How Data Is Used:
+Your location (if granted) is used only to request astronomy data from the ipgeolocation.io Astronomy API
+. This information is not stored, tracked, or shared by the app.
+
+No Data Collection:
+The app does not collect, store, or share personal information of any kind.
+
+Third-Party Services:
+The astronomy data is retrieved from ipgeolocation.io. Please review their privacy policy for details on how they handle requests.
+
+No Tracking:
+The app does not use analytics, advertising, or tracking tools.
+
+# WattIsIt
 
 A battery watt meter using ADS1115 and a shunt to measure power usage. The Arduino sketch `Arduino/WattIsIt`. Been using the DOIT ESP32 DEVKIT V1 board.
 
