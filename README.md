@@ -41,17 +41,18 @@ A battery watt meter using ADS1115 and a shunt to measure power usage. The Ardui
 
 AHT21 is optional, was used for humidity but also has a temperature sensor.
 
-| Item           | Link                                             |
-| -------------- | ------------------------------------------------ |
-| U2 ESP32       | [https://a.co/d/88cG9Z5](https://a.co/d/88cG9Z5) |
-| M1 ADS1115     | [https://a.co/d/gfCO6jt](https://a.co/d/gfCO6jt) |
-| U1 Voltage Reg | [https://a.co/d/cpmFpuU](https://a.co/d/cpmFpuU) |
-| U4 AHT21       | [https://a.co/d/6xBWBLx](https://a.co/d/6xBWBLx) |
-| U3 BMP280      | [https://a.co/d/1HV9oyw](https://a.co/d/1HV9oyw) |
-| J1 Terminals   | [https://a.co/d/8nVocXb](https://a.co/d/8nVocXb) |
-| Shunt          | [https://a.co/d/7QWWK5O](https://a.co/d/7QWWK5O) |
-| R1 10k Ohm     | [https://a.co/d/6f4wvqz](https://a.co/d/6f4wvqz) |
-| R2 5k Ohm      | [https://a.co/d/adCeki6](https://a.co/d/adCeki6) |
+| Item             | Link                                             |
+| ---------------- | ------------------------------------------------ |
+| U2 ESP32         | [https://a.co/d/88cG9Z5](https://a.co/d/88cG9Z5) |
+| M1 ADS1115       | [https://a.co/d/gfCO6jt](https://a.co/d/gfCO6jt) |
+| U1 Voltage Reg   | [https://a.co/d/cpmFpuU](https://a.co/d/cpmFpuU) |
+| U4 AHT21         | [https://a.co/d/6xBWBLx](https://a.co/d/6xBWBLx) |
+| U3 BMP280        | [https://a.co/d/1HV9oyw](https://a.co/d/1HV9oyw) |
+| J1 Terminals     | [https://a.co/d/8nVocXb](https://a.co/d/8nVocXb) |
+| J1 JST Connector | [https://a.co/d/0xq4sMO](https://a.co/d/0xq4sMO) |
+| Shunt            | [https://a.co/d/7QWWK5O](https://a.co/d/7QWWK5O) |
+| R1 10k Ohm       | [https://a.co/d/6f4wvqz](https://a.co/d/6f4wvqz) |
+| R2 5k Ohm        | [https://a.co/d/adCeki6](https://a.co/d/adCeki6) |
 
 ## Version 1.0
 

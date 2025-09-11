@@ -30,7 +30,7 @@ export default {
     name: getAppName(),
     slug: "WattIsIt",
     version: "1.0.1",
-    buildNumber: "2",
+    buildNumber: "3",
     orientation: "portrait",
     icon: "./assets/icon.png",
     userInterfaceStyle: "light",
@@ -48,20 +48,26 @@ export default {
         "expo-location",
         {
           locationAlwaysAndWhenInUsePermission:
-            "Allow $(PRODUCT_NAME) to use your location.",
+            "Camp Sense uses your latitude and longitude to get astronomy data from api.ipgeolocation.io.  This allows accurate sunrise, sunset, and moonrise times. This is optional and does not affect the energy monitoring.",
         },
       ],
     ],
     ios: {
       supportsTablet: true,
       bundleIdentifier: getUniqueIdentifier(),
-      buildNumber: "2",
+      buildNumber: "3",
       infoPlist: {
         NSBluetoothAlwaysUsageDescription:
-          "Camp Sense uses Bluetooth to connect to devices.",
+          "Camp Sense uses Bluetooth in the background to stay connected to your WattIsIT energy monitor.",
         NSBluetoothPeripheralUsageDescription:
-          "Camp Sense needs access to your Bluetooth.",
+          "Camp Sense uses Bluetooth to stay connected to your WattIsIt energy monitor.",
         "ITSAppUsesNonExemptEncryption": false,
+        NSLocationAlwaysUsageDescription:
+          "Camp Sense uses your latitude and longitude to get astronomy data from api.ipgeolocation.io.  This allows accurate sunrise, sunset, and moonrise times. This is optional and does not affect the energy monitoring.",
+        NSLocationWhenInUseUsageDescription: 
+          "Camp Sense uses your latitude and longitude to get astronomy data from api.ipgeolocation.io.  This allows accurate sunrise, sunset, and moonrise times. This is optional and does not affect the energy monitoring.",
+        NSLocationAlwaysAndWhenInUseUsageDescription:
+          "Camp Sense uses your latitude and longitude to get astronomy data from api.ipgeolocation.io.  This allows accurate sunrise, sunset, and moonrise times. This is optional and does not affect the energy monitoring."
       },
     },
     android: {

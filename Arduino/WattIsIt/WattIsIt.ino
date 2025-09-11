@@ -110,7 +110,11 @@ void setup()
 #endif
 
 #ifdef AHT2x
-  aht20.begin();
+  if (!aht20.begin()) {
+    Serial.println("AHT20 sensor not found!");
+  } else {
+    Serial.println("AHT20 sensor initialized successfully");
+  }
 #endif
 
   EEPROM.begin(1); // Initialize EEPROM 1 bytes
