@@ -1,0 +1,52 @@
+# _config.yml
+title: "Camp Sense"
+description: "Battery energy monitor and weather app with ESP32 hardware"
+baseurl: ""
+url: "https://campsense.app"
+
+# App information
+app:
+  name: "Camp Sense"
+  description: "Battery energy monitoring and weather app with ESP32 hardware"
+  app_store_url: "https://apps.apple.com/us/app/camp-sense/id6741625671"
+  github_url: "https://github.com/dustinb/CampSense"
+  website_url: "https://campsense.app"
+  
+# Hardware information
+hardware:
+  name: "WattIsIt"
+  description: "Battery watt meter using ADS1115 and a shunt to measure power usage"
+  mcu: "ESP32 DEVKIT V1"
+  adc: "ADS1115"
+
+# Jekyll settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Navigation
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "Hardware"
+    url: "/hardware/"
+  - title: "App"
+    url: "/app/"
+  - title: "Privacy"
+    url: "/privacy/"
+
+# Exclude files from processing
+exclude:
+  - App
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - yarn.lock
+  - README.md
+
+# Include additional directories
+include:
+  - _pages
+  - _posts

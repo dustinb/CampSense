@@ -233,7 +233,7 @@ void loop()
   float adcVolts = adc * f;
 
   // Resister values measured
-  int R1 = 9880;
+  int R1 = 10000;
   int R2 = 5100;
 
   // https://ohmslawcalculator.com/voltage-divider-calculator

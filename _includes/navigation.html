@@ -1,0 +1,8 @@
+<nav class="site-nav">
+  <div class="trigger">
+    {% for item in site.navigation %}
+      <a class="page-link" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+    {% endfor %}
+  </div>
+</nav>
+
