@@ -3,14 +3,14 @@
     "GenerationSoftware": {
       "Vendor": "KiCad",
       "Application": "Pcbnew",
-      "Version": "7.0.7"
+      "Version": "9.0.4"
     },
-    "CreationDate": "2023-11-02T18:32:30-06:00"
+    "CreationDate": "2025-10-06T20:24:04-06:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
-      "Name": "BatteryMeter",
-      "GUID": "42617474-6572-4794-9d65-7465722e6b69",
+      "Name": "v1",
+      "GUID": "76312e6b-6963-4616-945f-706362585858",
       "Revision": "rev?"
     },
     "Size": {
@@ -32,47 +32,47 @@
   ],
   "FilesAttributes": [
     {
-      "Path": "BatteryMeter-F_Cu.gbr",
+      "Path": "v1-F_Cu.gbr",
       "FileFunction": "Copper,L1,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "BatteryMeter-B_Cu.gbr",
+      "Path": "v1-B_Cu.gbr",
       "FileFunction": "Copper,L2,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "BatteryMeter-F_Paste.gbr",
+      "Path": "v1-F_Paste.gbr",
       "FileFunction": "SolderPaste,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "BatteryMeter-B_Paste.gbr",
+      "Path": "v1-B_Paste.gbr",
       "FileFunction": "SolderPaste,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "BatteryMeter-F_Silkscreen.gbr",
+      "Path": "v1-F_Silkscreen.gbr",
       "FileFunction": "Legend,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "BatteryMeter-B_Silkscreen.gbr",
+      "Path": "v1-B_Silkscreen.gbr",
       "FileFunction": "Legend,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "BatteryMeter-F_Mask.gbr",
+      "Path": "v1-F_Mask.gbr",
       "FileFunction": "SolderMask,Top",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "BatteryMeter-B_Mask.gbr",
+      "Path": "v1-B_Mask.gbr",
       "FileFunction": "SolderMask,Bot",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "BatteryMeter-Edge_Cuts.gbr",
+      "Path": "v1-Edge_Cuts.gbr",
       "FileFunction": "Profile",
       "FilePolarity": "Positive"
     }
@@ -88,24 +88,29 @@
     },
     {
       "Type": "SolderMask",
+      "Thickness": 0.01,
       "Name": "Top Solder Mask"
     },
     {
       "Type": "Copper",
+      "Thickness": 0.035,
       "Name": "F.Cu"
     },
     {
       "Type": "Dielectric",
+      "Thickness": 1.51,
       "Material": "FR4",
       "Name": "F.Cu/B.Cu",
       "Notes": "Type: dielectric layer 1 (from F.Cu to B.Cu)"
     },
     {
       "Type": "Copper",
+      "Thickness": 0.035,
       "Name": "B.Cu"
     },
     {
       "Type": "SolderMask",
+      "Thickness": 0.01,
       "Name": "Bottom Solder Mask"
     },
     {

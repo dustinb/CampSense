@@ -1,10 +1,17 @@
-#include <Arduino.h>
-
+#include <Wire.h>
 #include <EEPROM.h>
 #include <BLEDevice.h>
 #include <BLEServer.h>
 #include <BLEUtils.h>
 #include <BLE2902.h>
+
+#define ADC // Enable ADS1115
+// #define BMP280 // Enable BMP280
+#define BME280 // Enable BME280
+// #define AHT2x // Enable AHT2x
+
+const int R1 = 36000;
+const int R2 = 10000;
 
 #define DEVICE_NAME "WattIsIt"
 
@@ -17,28 +24,24 @@ BLECharacteristic *pWeatherDataChar;
 BLECharacteristic *pEnergyDataChar;
 BLECharacteristic *pMvDataChar;
 
-// #define BMP
-#ifdef BMP
-#include <Adafruit_BMP085.h>
-Adafruit_BMP085 bmp;
-#endif
-
-#define ADC
 #ifdef ADC
 #include "ADS1X15.h"
 ADS1115 ADS(0x48);
 #endif
 
-#define BMP280
 #ifdef BMP280
 #include "Adafruit_BMP280.h"
 Adafruit_BMP280 bmp280;
 #endif
 
-#define AHT2x
 #ifdef AHT2x
 #include <AHT20.h>
 AHT20 aht20;
+#endif
+
+#ifdef BME280
+#include "Adafruit_BME280.h"
+Adafruit_BME280 bme280;
 #endif
 
 float wattHoursCharge = 0;
@@ -96,13 +99,15 @@ class mvCallback : public BLECharacteristicCallbacks
 void setup()
 {
   Serial.begin(115200);
-
+  Wire.begin();
+  delay(1000);
+  
+  while(!Serial) {
+    delay(10);
+  }
+  
 #ifdef ADC
   ADS.begin();
-#endif
-
-#ifdef BMP
-  bmp.begin();
 #endif
 
 #ifdef BMP280
@@ -114,6 +119,14 @@ void setup()
     Serial.println("AHT20 sensor not found!");
   } else {
     Serial.println("AHT20 sensor initialized successfully");
+  }
+#endif
+
+#ifdef BME280
+  if (!bme280.begin(0x76)) {
+    Serial.println("BME280 sensor not found!");
+  } else {
+    Serial.println("BME280 sensor initialized successfully");
   }
 #endif
 
@@ -193,13 +206,6 @@ void loop()
   float temp = 0;
   float tempCount = 0;
 
-#ifdef BMP
-  temp += bmp.readTemperature();
-  tempCount++;
-  weather.pressure = bmp.readPressure();
-  weather.altitude = bmp.readAltitude() * 3.28084;
-#endif
-
 #ifdef BMP280
   temp += bmp280.readTemperature();
   tempCount++;
@@ -226,15 +232,26 @@ void loop()
   delay(200);
 #endif
 
+#ifdef BME280
+  temp += bme280.readTemperature();
+  tempCount++;
+  weather.pressure = bme280.readPressure();
+  weather.altitude = bme280.readAltitude(1013.25) * 3.28084; // Sea level pressure in hPa
+  weather.humidity = bme280.readHumidity();
+
+  Serial.print("Humidity: ");
+  Serial.println(weather.humidity);
+  Serial.print("Pressure: ");
+  Serial.println(weather.pressure);
+  Serial.print("Altitude: ");
+  Serial.println(weather.altitude);
+#endif
+
 #ifdef ADC
-  ADS.setGain(0);
+  ADS.setGain(1);
   int16_t adc = ADS.readADC(0);
   float f = ADS.toVoltage(1);
   float adcVolts = adc * f;
-
-  // Resister values measured
-  int R1 = 10000;
-  int R2 = 5100;
 
   // https://ohmslawcalculator.com/voltage-divider-calculator
   float vbat = ((R1 + R2) * adcVolts) / R2;

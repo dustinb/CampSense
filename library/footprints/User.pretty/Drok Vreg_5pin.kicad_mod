@@ -1,13 +1,13 @@
-(footprint "HiLetgo BMP280-3.3"
+(footprint "Drok Vreg_5pin"
 	(version 20241229)
 	(generator "pcbnew")
 	(generator_version "9.0")
 	(layer "F.Cu")
 	(property "Reference" "REF**"
-		(at 0 -2.54 0)
+		(at -1.31 -6.77 0)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(uuid "fa487414-f257-4d67-b865-9a46bb29511d")
+		(uuid "8b22db28-cb86-488f-86d0-ea788c2f0d1d")
 		(effects
 			(font
 				(size 1 1)
@@ -15,11 +15,11 @@
 			)
 		)
 	)
-	(property "Value" "HiLetgo BMP280-3.3"
-		(at 3.5 6 270)
+	(property "Value" "Drok Vreg"
+		(at -1.31 9.595 0)
 		(unlocked yes)
 		(layer "F.Fab")
-		(uuid "bae1fcd0-a568-4cf5-a6e8-05740e148923")
+		(uuid "9086b51d-31b9-4bc2-a930-6a1e5ec8d4aa")
 		(effects
 			(font
 				(size 1 1)
@@ -31,7 +31,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "53c83510-55d8-4303-ad0f-ce406b5abb0d")
+		(uuid "1dfeea69-14a6-4773-b00d-4a4bee88de5a")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -43,7 +43,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "3bb57ec8-9a07-477e-856c-a2d54b938826")
+		(uuid "6ae100ca-eb20-4321-a27a-a3fd3bf14192")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -51,11 +51,23 @@
 			)
 		)
 	)
-	(fp_text user "GND"
-		(at -4.127016 3.165573 0)
+	(attr through_hole)
+	(fp_rect
+		(start 2.5 -5.5)
+		(end -17.5 8.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "b8f48124-b656-45d7-aef4-fff21b9951e8")
+	)
+	(fp_text user "OUT -"
+		(at -4.81 4.66 0)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(uuid "07a3a2bc-e343-4dd5-8c57-c00222accd0c")
+		(uuid "716664cb-aef6-46a9-b267-6aebe0aff058")
 		(effects
 			(font
 				(size 1 1)
@@ -64,11 +76,11 @@
 			(justify left bottom)
 		)
 	)
-	(fp_text user "CSB"
-		(at -4.076065 10.808196 0)
+	(fp_text user "IN -"
+		(at -3.31 2.12 0)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(uuid "3ee595b6-6bb6-4ef5-a779-5d63f37e2c67")
+		(uuid "767bd103-adcc-4bf8-9ad5-5e5709031c44")
 		(effects
 			(font
 				(size 1 1)
@@ -77,11 +89,11 @@
 			(justify left bottom)
 		)
 	)
-	(fp_text user "SDD"
-		(at -4 13.5 0)
+	(fp_text user "OUT +"
+		(at -4.738629 7.176476 0)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(uuid "44b26418-e407-4c54-b69c-9a631595e70f")
+		(uuid "7c50d530-5422-441d-90c9-94602d8af1bc")
 		(effects
 			(font
 				(size 1 1)
@@ -90,11 +102,11 @@
 			(justify left bottom)
 		)
 	)
-	(fp_text user "VCC"
-		(at -3.999639 0.643508 0)
+	(fp_text user "Enable"
+		(at -5 -3 0)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(uuid "4c9ffaea-a80d-4160-9eab-e69b2ddb5d13")
+		(uuid "a1242080-1fab-4ec5-bea5-a3880c9fed7c")
 		(effects
 			(font
 				(size 1 1)
@@ -103,24 +115,11 @@
 			(justify left bottom)
 		)
 	)
-	(fp_text user "SCL"
-		(at -3.974163 5.73859 0)
+	(fp_text user "IN +"
+		(at -3.31 -0.42 0)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(uuid "4eae8fee-4575-4602-a0d6-454b0031d5c5")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.1)
-			)
-			(justify left bottom)
-		)
-	)
-	(fp_text user "SDA"
-		(at -4.025114 8.184229 0)
-		(unlocked yes)
-		(layer "F.SilkS")
-		(uuid "635bb275-948c-44b6-8833-a81b44c05a81")
+		(uuid "c37d4992-44ad-4f34-a3cd-778950496b2b")
 		(effects
 			(font
 				(size 1 1)
@@ -130,10 +129,10 @@
 		)
 	)
 	(fp_text user "${REFERENCE}"
-		(at 2 4.5 270)
+		(at -1.31 11.5 0)
 		(unlocked yes)
 		(layer "F.Fab")
-		(uuid "ae24d8ef-e9bf-40f8-a39b-8b40d543f0fe")
+		(uuid "9c288920-53ed-4c85-b0ff-9055d405c959")
 		(effects
 			(font
 				(size 1 1)
@@ -141,64 +140,56 @@
 			)
 		)
 	)
-	(pad "1" thru_hole rect
-		(at 0 0)
-		(size 2 2)
+	(pad "1" thru_hole circle
+		(at 1.23 -3.595 270)
+		(size 1.6 1.6)
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "19846f07-6274-40b9-906b-aa40002ba2b4")
+		(uuid "0df96f57-18e6-4aff-86ee-02e6d4f9b954")
 	)
 	(pad "2" thru_hole circle
-		(at 0 2.54)
-		(size 2 2)
+		(at 1.23 -1.055 270)
+		(size 1.6 1.6)
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "cbf15dc0-feec-46f4-a764-81d0f6cb9a3f")
+		(uuid "7ebc4748-9630-4e66-b474-b4d922db9303")
 	)
 	(pad "3" thru_hole circle
-		(at 0 5.08)
-		(size 2 2)
+		(at 1.23 1.485 270)
+		(size 1.6 1.6)
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "e118cde0-d76f-4941-87cc-916bfbd696c1")
+		(uuid "283d0899-48f2-4716-b1cc-a20380537a00")
 	)
 	(pad "4" thru_hole circle
-		(at 0 7.62)
-		(size 2 2)
+		(at 1.23 4.025 270)
+		(size 1.6 1.6)
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "9df059df-1298-4e7d-a334-343eaea2f45c")
+		(uuid "4197934f-6eaf-4bcb-b70c-9bab588ad380")
 	)
 	(pad "5" thru_hole circle
-		(at 0 10.16)
-		(size 2 2)
+		(at 1.23 6.565 270)
+		(size 1.6 1.6)
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "9a8a9445-04bd-4863-9cd0-7b8090c6c22f")
-	)
-	(pad "6" thru_hole circle
-		(at 0 12.7)
-		(size 2 2)
-		(drill 1)
-		(layers "*.Cu" "*.Mask")
-		(remove_unused_layers no)
-		(uuid "9d446c44-2533-4e0c-93eb-21a84724a8b4")
+		(uuid "9c4f5e93-a148-4477-ae38-63f39840ac0e")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/library/models/bmp280-module-1.snapshot.1/bmp280_module.stp"
+	(model "${KIPRJMOD}/library/models/Drok_Vreg_5pin.step"
 		(offset
-			(xyz 0 -3 27)
+			(xyz -17 5.5 2)
 		)
 		(scale
 			(xyz 1 1 1)
 		)
 		(rotate
-			(xyz -90 0 0)
+			(xyz -0 -0 -0)
 		)
 	)
 )
