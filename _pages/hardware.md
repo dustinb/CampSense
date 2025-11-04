@@ -8,6 +8,20 @@ permalink: /hardware/
 
 A battery watt meter using ADS1115 and a shunt to measure power usage. The Arduino sketch is located in `Arduino/WattIsIt`. Been using the DOIT ESP32 DEVKIT V1 board.
 
+## Version 1.2
+
+|                KiCad Model                     |                    PCB                       |
+| :--------------------------------------------: | :------------------------------------------: |
+| <img src="../images/proto1.2.png" width="300"> | <img src="../images/pcb1.2.jpg" width="300"> |
+
+## Case & Battery Holder
+
+Download all STLs for printing the hoder and case <a href="../images/camp_sense_stl.zip" >here</a>
+
+|                Hex                             |                    Oval                        |
+| :--------------------------------------------: | :--------------------------------------------: |
+| <img src="../images/casehex.png" width="300">  | <img src="../images/caseoval.png" width="300"> |
+
 ## Wiring Diagram
 
 **+** Positive battery terminal
@@ -36,20 +50,14 @@ If using a BME280 on U3 can skip the AHT21 at U4.  The BME280 has tempurature, h
 | J1 JST Connector | [https://a.co/d/0xq4sMO](https://a.co/d/0xq4sMO) |
 | Shunt            | [https://a.co/d/2KoI4U9](https://a.co/d/2KoI4U9) |
 | R1 36k Ohm       | [https://a.co/d/88x0EcR](https://a.co/d/88x0EcR) |
-| R2 10k Ohm       | [https://a.co/d/gytpesq](https://a.co/d/gytpesq) |
+| R2 10k Ohm       | [https://a.co/d/3lXzVxy](https://a.co/d/3lXzVxy) |
 | #10 Ring Terminal| [https://a.co/d/7aQ1Wun](https://a.co/d/7aQ1Wun) |
 | M8 Ring Terminal | [https://a.co/d/6IeT5Sb](https://a.co/d/6IeT5Sb) |
 | Conformal Coat   | [https://a.co/d/5Z8R07R](https://a.co/d/5Z8R07R) |
 
-## Version 1.2
-
-|                KiCad Model                     |                    PCB                       |
-| :--------------------------------------------: | :------------------------------------------: |
-| <img src="../images/proto1.2.png" width="300"> | <img src="../images/pcb1.2.jpg" width="300"> |
-
 ## Arduino Code
 
-The Arduino sketch for the WattIsIt module is available in the `Arduino/WattIsIt/` directory. This code handles:
+The Arduino sketch for the WattIsIt module is available in the <a href="https://github.com/dustinb/CampSense/blob/master/Arduino/WattIsIt/WattIsIt.ino" target="_blank">Arduino/WattIsIt</a> directory. This code handles:
 
 - Reading voltage and current measurements from the ADS1115 ADC
 - Calculating power and energy usage

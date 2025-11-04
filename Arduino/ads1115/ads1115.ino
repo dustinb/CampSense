@@ -15,6 +15,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   delay(1000);
+  ADS.setGain(1);
   int16_t adc = ADS.readADC(0);
   float f = ADS.toVoltage(1);
   float adcVolts = adc * f;
