@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
-import { BleManager } from "react-native-ble-plx";
+import { BleManager, PermissionStatus } from "react-native-ble-plx";
+import { Platform, PermissionsAndroid} from 'react-native';
 import base64 from "react-native-base64";
 
 // WattIsIt service UUID
@@ -14,6 +15,49 @@ const useBLE = (monitor) => {
   const [connectionStatus, setConnectionStatus] = useState("BLE Searching...");
   const deviceRef = useRef(null);
   const charRef = useRef(null);
+
+  // Request Android permissions
+  const requestAndroidPermissions = async () => {
+    if (Platform.OS !== "android") {
+      return true;
+    }
+
+    try {
+      // For Android 12+ (API 31+)
+      if (Platform.Version >= 31) {
+        const granted = await PermissionsAndroid.requestMultiple([
+          PermissionsAndroid.PERMISSIONS.BLUETOOTH_SCAN,
+          PermissionsAndroid.PERMISSIONS.BLUETOOTH_CONNECT,
+          PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+        ]);
+
+        return (
+          granted["android.permission.BLUETOOTH_SCAN"] ===
+            PermissionsAndroid.RESULTS.GRANTED &&
+          granted["android.permission.BLUETOOTH_CONNECT"] ===
+            PermissionsAndroid.RESULTS.GRANTED &&
+          granted["android.permission.ACCESS_FINE_LOCATION"] ===
+            PermissionsAndroid.RESULTS.GRANTED
+        );
+      } else {
+        // For Android < 12
+        const granted = await PermissionsAndroid.requestMultiple([
+          PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+          PermissionsAndroid.PERMISSIONS.ACCESS_COARSE_LOCATION,
+        ]);
+
+        return (
+          granted["android.permission.ACCESS_FINE_LOCATION"] ===
+            PermissionsAndroid.RESULTS.GRANTED ||
+          granted["android.permission.ACCESS_COARSE_LOCATION"] ===
+            PermissionsAndroid.RESULTS.GRANTED
+        );
+      }
+    } catch (err) {
+      console.warn("Permission request error:", err);
+      return false;
+    }
+  };
 
   const writeMV = (mV, reset) => {
     if (charRef.current) {
@@ -41,7 +85,15 @@ const useBLE = (monitor) => {
     }
   };
 
-  const searchAndConnectToDevice = () => {
+  const searchAndConnectToDevice = async () => {
+    // Request permissions first
+    const hasPermissions = await requestAndroidPermissions();
+    if (!hasPermissions) {
+      setConnectionStatus("Bluetooth permissions denied");
+      console.error("Bluetooth permissions not granted");
+      return;
+    }
+
     const checkBleState = () => {
       return bleManager
         .state()
@@ -73,6 +125,7 @@ const useBLE = (monitor) => {
       console.log("Scanning for devices...");
       setConnectionStatus("Scanning for " + DEVICE_NAME + "...");
       bleManager.startDeviceScan([SERVICE_UUID], null, (error, device) => {
+        if (device == null) return;
         console.log("device: ", device.name);
         if (error) {
           console.error("Wait For On", error);

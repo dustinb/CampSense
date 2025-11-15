@@ -1,8 +1,7 @@
 import { React } from "react";
 import { View, Text, ImageBackground, Pressable } from "react-native";
 import { AnimatedCircularProgress } from "react-native-circular-progress";
-import Ionicons from "react-native-vector-icons/Ionicons";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { Bar } from "react-native-progress";
 import { useEnergy } from "./EnergyContext";
 import { PanGestureHandler, State } from "react-native-gesture-handler";
